@@ -1,21 +1,21 @@
 import pytesseract
 import pyautogui
-import keyboard
+from keyboard import is_pressed
 from time import sleep
 from screeninfo import get_monitors
-from playsound import playsound
+import winsound
 import os
-import getpass
+from getpass import getuser
 from PIL import ImageGrab
 from functools import partial
 ImageGrab.grab = partial(ImageGrab.grab, all_screens=True)
 
-username = getpass.getuser()
+username = getuser()
 
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 os.chdir(dname)
-print(dname)
+
 
 os.system('cls')
 
@@ -37,10 +37,10 @@ class Translate:
         bottomright = False
 
         while True:
-            if keyboard.is_pressed('-') and topleft == False:
+            if is_pressed('-') and topleft == False:
                 self.top_left = pyautogui.position()
                 topleft = True
-            if keyboard.is_pressed('+') and bottomright == False:
+            if is_pressed('+') and bottomright == False:
                 self.bottom_right = pyautogui.position()
                 bottomright = True
             if bottomright == True and topleft == True :
@@ -98,7 +98,7 @@ if monitor == 1 or monitor == 0:
         sleep(1)
         if sentence != "" :
             try:
-                playsound(dname + '\\sound.wav')
+                winsound.PlaySound(dname+'\\sound.wav', winsound.SND_FILENAME)
             except:
                 print("Audio file not found !")
 
