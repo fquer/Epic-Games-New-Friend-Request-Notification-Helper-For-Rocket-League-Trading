@@ -8,7 +8,6 @@ If you have a new friend request, you can receive notifications by playing the a
 * pyautogui
 * keyboard
 * screeninfo
-* playsound
 * PIL
 * Audio file must have sound.wav format. mp3 format doesn't work.
 * Audio file must be in the same directory.
