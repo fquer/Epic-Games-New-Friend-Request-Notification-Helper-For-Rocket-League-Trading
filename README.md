@@ -28,3 +28,5 @@ Press 1 if the 2nd monitor is on your left
 Top left coordinates with '-' key
 Bottom right coordinates with '+' key
 Just move your mouse to any coordinate and press -, +
+
+https://github.com/fquer/Epic-Games-New-Friend-Request-Notification-Helper-For-Rocket-League-Trading/releases/download/v1.0/epic-games-notificator.rar
