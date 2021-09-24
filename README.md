@@ -9,12 +9,13 @@ If you have a new friend request, you can receive notifications by playing the a
 * keyboard
 * screeninfo
 * PIL
-* Audio file must have sound.wav format. mp3 format doesn't work.
-* Audio file must be in the same directory.
+* You need Tesseract. The latest installers can be downloaded here: https://github.com/UB-Mannheim/tesseract/wiki
 
 # Important
 
 * If you get error code 265 you need .py and .wav files to a folder less deep inside the file system.
+* Audio file must have sound.wav format. mp3 format doesn't work.
+* Audio file must be in the same directory.
 
 # Usage
 
