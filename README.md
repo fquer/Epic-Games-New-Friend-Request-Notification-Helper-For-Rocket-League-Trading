@@ -30,3 +30,7 @@ Top left coordinates with '-' key
 Bottom right coordinates with '+' key
 Just move your mouse to any coordinate and press -, +
 
+# Releases
+
+Download lastest release here:
+https://github.com/fquer/Epic-Games-New-Friend-Request-Notification-Helper-For-Rocket-League-Trading/releases
