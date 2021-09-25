@@ -8,7 +8,7 @@ If you have a new friend request, you can receive notifications by playing the a
 * pyautogui
 * keyboard
 * screeninfo
-* PIL
+* PIL (dual monitor setup will be need 8.3 or higher)
 * You need Tesseract. The latest installers can be downloaded here: https://github.com/UB-Mannheim/tesseract/wiki
 
 # Important
