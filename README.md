@@ -30,6 +30,9 @@ Top left coordinates with '-' key
 Bottom right coordinates with '+' key
 Just move your mouse to any coordinate and press -, +
 
+![epic](https://user-images.githubusercontent.com/54486031/134810104-0eaa0376-706c-4e70-8f2c-eae50138e37a.PNG)
+
+
 # Releases
 
 Download lastest release here:
