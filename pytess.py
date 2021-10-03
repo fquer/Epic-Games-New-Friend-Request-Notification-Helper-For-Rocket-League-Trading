@@ -9,7 +9,7 @@ from getpass import getuser
 from PIL import ImageGrab
 from functools import partial
 ImageGrab.grab = partial(ImageGrab.grab, all_screens=True)
-
+import threading
 username = getuser()
 
 abspath = os.path.abspath(__file__)
@@ -67,27 +67,12 @@ class Translate:
 	    return pytesseract.image_to_string(self.img_res, lang="eng")
         
 
-print("Press 0 if you dont have 2nd monitor\n\nPress 0 if the 2nd monitor is on your right\nPress 1 if the 2nd monitor is on your left")
-monitor = int(input("\nInput : "))
-
-if monitor == 1 or monitor == 0:
-
-    print("\n\nTop left coordinates with - key\nBottom right coordinates with + key\nJust move your mouse to any coordinate and press it !")
-    cv = Translate()
+def thread_work(cv):
+    
     cv.set_monitor(monitor)
-    say=0
+    
     while True:
-        os.system('cls')
-        if say%8==0 or say%8==4 :
-            worker = "-"
-        elif say%8==3 or say%8==7:
-            worker = "/"
-        elif say%8==2 or say%8==6:
-            worker = "|"
-        elif say%8==1 or say%8==5:
-            worker = "\\"
-        print("Working {}".format(worker))
-        say+=1
+        
         cv.screenshot()
         try:
             sentence=cv.process_image()
@@ -101,6 +86,37 @@ if monitor == 1 or monitor == 0:
                 winsound.PlaySound(dname+'\\sound.wav', winsound.SND_FILENAME)
             except:
                 print("Audio file not found !")
+
+def working():
+    say=0
+    while True:
+        os.system('cls')
+        if say%8==0 or say%8==4 :
+            worker = "-"
+        elif say%8==3 or say%8==7:
+            worker = "/"
+        elif say%8==2 or say%8==6:
+            worker = "|"
+        elif say%8==1 or say%8==5:
+            worker = "\\"
+        print("Working {}".format(worker))
+        say+=1
+        sleep(1)
+
+print("Press 0 if you dont have 2nd monitor\n\nPress 0 if the 2nd monitor is on your right\nPress 1 if the 2nd monitor is on your left")
+monitor = int(input("\nInput : "))
+
+if monitor == 1 or monitor == 0:
+    
+    print("\n\nTop left coordinates with - key\nBottom right coordinates with + key\nJust move your mouse to any coordinate and press it !")
+    cv = Translate()
+    process = threading.Thread(target=thread_work, args=(cv,))
+    process.start()
+    
+    #working()
+
+    os.system('cls')
+    print("Ready !\nWaiting for invitations...")
 
 else:
     print("Invalid Selection !")
